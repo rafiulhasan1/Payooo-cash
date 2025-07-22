@@ -20,6 +20,19 @@ document.getElementById('btn-cash-out').addEventListener('click',function(){
             const totalAmount = mainCash - cashOutAmount;
             //console.log(totalAmount)
             document.getElementById('main-cash').innerText = totalAmount;
+
+            // const p = document.createElement('p');
+            // p.innerText = `Cash Out. Out: ${cashOutAmount} New Balance: ${totalAmount}`
+            // document.getElementById('transaction-history').appendChild(p);
+
+            const div = document.createElement('div');
+            div.classList.add('bg-red-100');
+            div.innerHTML = `
+                <h1 class="text-2xl font-bold text-gray-700 p-3">withdraw</h1>
+                <h3 class="text-xl font-bold text-gray-700 p-3">Taka : ${cashOutAmount} |  New Balance : ${totalAmount}</h3>
+            `
+            document.getElementById('transaction-history2').appendChild(div);
+
         }
         else{
             alert('Wrong Pin');

@@ -14,6 +14,7 @@ function removeAdd(id){
 
     document.getElementById('add-money').classList.add('hidden');
     document.getElementById('cash-out-money').classList.add('hidden');
+    document.getElementById('transaction-history').classList.add('hidden');
 
     document.getElementById(id).classList.remove('hidden');
 }

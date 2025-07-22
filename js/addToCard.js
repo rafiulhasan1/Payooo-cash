@@ -1,5 +1,9 @@
 document.getElementById('add-to-card').addEventListener('click', function(){
-    removeAdd('add-money')
+    removeAdd('add-money');
+})
+
+document.getElementById('transaction-history-btn').addEventListener('click',function(){
+    removeAdd('transaction-history');
 })
 
 document.getElementById('btn-add-money').addEventListener('click',function(){
@@ -20,6 +24,20 @@ document.getElementById('btn-add-money').addEventListener('click',function(){
             const totalAmount = addAmount + mainCash;
             //console.log(totalAmount)
             document.getElementById('main-cash').innerText = totalAmount;
+            
+            // const p = document.createElement('p');
+            // p.innerText = `Add Money. Add: ${addAmount} New Balance: ${totalAmount}`
+            // document.getElementById('transaction-history').appendChild(p);
+
+            const div = document.createElement('div');
+            div.classList.add('bg-green-100');
+            div.innerHTML = `
+                <h1 class="text-2xl font-bold text-gray-700 p-3">Cash In</h1>
+                <h3 class="text-xl font-bold text-gray-700 p-3">Taka : ${addAmount} |  New Balance : ${totalAmount}</h3>
+            `
+            document.getElementById('transaction-history2').appendChild(div);
+            //console.log(div)
+
             }
             else{
                 alert('Wrong Pin');
